@@ -10,7 +10,7 @@ Resources:
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: 23
-          ToPort: 22
+          ToPort: 23
           CidrIp: 0.0.0.0/0 # For better security, restrict this to your IP
         
         
