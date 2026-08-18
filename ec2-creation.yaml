@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: ec2 create
+
+Resources:
+  # 1. Define the Security Group
+  WebServerSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: SSH access
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 23
+          ToPort: 22
+          CidrIp: 0.0.0.0/0 # For better security, restrict this to your IP
+        
+        
+       
+  # 2. Define the EC2 Instance
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t3.micro 
+      ImageId: ami-06475e8f54266e38e # Replace with a valid AMI ID for your region
+      KeyName: Tarun
+      SecurityGroupIds:
+        - !Ref WebServerSecurityGroup
+      Tags:
+        - Key: Name
+          Value: create-automatic-ec2
+  
