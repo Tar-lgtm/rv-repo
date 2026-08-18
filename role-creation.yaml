@@ -22,6 +22,8 @@ Resources:
       # Managed Policies: Existing AWS policies you want to attach
       ManagedPolicyArns:
         - 'arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess'
+        - 'arn:aws:iam::aws:policy/AmazonEC2FullAccess'
+        - 'arn:aws:iam::aws:policy/AmazonS3FullAccess'
 
       # Inline Policies: Custom policies defined inside this role
       Policies:
@@ -33,6 +35,7 @@ Resources:
                 Action:
                   - 's3:PutObject'
                   - 's3:DeleteObject'
+                  - 's3:GetObject'
                 Resource: 'arn:aws:s3:::my-target-bucket-name/*'
 
                 
