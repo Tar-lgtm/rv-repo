@@ -12,6 +12,10 @@ Resources:
           FromPort: 23
           ToPort: 23
           CidrIp: 0.0.0.0/0 # For better security, restrict this to your IP
+        - IpProtocol: tcp
+          FromPort: 24
+          ToPort: 24
+          CidrIp: 0.0.0.0/0 # For better security, restrict this to your IP
         
         
        
