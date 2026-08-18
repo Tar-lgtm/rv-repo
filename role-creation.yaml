@@ -34,7 +34,7 @@ Resources:
                 Action:
                   - 's3:DeleteObject'
                   
-            "Resource": "*"
+            Resource: 'arn:aws:s3:::my-target-bucket-name/*'
                 
   
 
